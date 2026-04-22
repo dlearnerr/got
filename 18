@@ -1,0 +1,6 @@
+docker build -t my-app .
+docker run my-app
+
+docker push my-app dhananjays1/my-app
+docker login
+docker push dhananjays1/my-app
