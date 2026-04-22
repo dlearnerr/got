@@ -1,0 +1,5 @@
+docker volume create myvolume
+docker voulme ls
+docker run -it -v myvolume:/data ubuntu bash
+
+docker run -d -p 8082:80 -v myvolume:/usr/share/nginx/html nginx
