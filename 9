@@ -77,3 +77,28 @@ STEP 9: Save and execute addition pipeline
 Click Save
 Click Build Now
 Verify addition result in Console Output
+
+pipeline {
+    agent any
+
+    stages {
+        
+        stage('Checkout Code') {
+            steps {
+                git 'https://github.com/your-username/sample-app.git'
+            }
+        }
+
+        stage('Build') {
+            steps {
+                bat 'mvn clean compile'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                bat 'mvn test'
+            }
+        }
+    }
+}
